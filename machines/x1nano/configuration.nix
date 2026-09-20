@@ -34,6 +34,11 @@
   environment.etc."X11/xorg.conf.d/90-disable-mouse-accel.conf".source =
     ./90-disable-mouse-accel.conf;
 
+  #hardware.graphics = {
+  #  enable = true;
+  #  enable32Bit = true;
+  #};
+
   # Enable firmware updates
   hardware.enableRedistributableFirmware = true;
 
