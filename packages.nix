@@ -1,8 +1,17 @@
 { pkgs, ...}:
 {
   programs.firefox.enable = true;
-  programs.git.enable = true;
   programs.tmux.enable = true;
+
+  programs.git = {
+    enable = true;
+    config = {
+      user = {
+        name = "MassiveMigraine";
+        email = "MassiveMigraine@gmail.com";
+      };
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme

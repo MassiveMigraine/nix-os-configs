@@ -1,7 +1,6 @@
 { config, ... }:
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
-  #dotfiles = "/home/ghost/.dotfiles";
 in
 {
 
