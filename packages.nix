@@ -6,6 +6,9 @@
   programs.git = {
     enable = true;
     config = {
+      init = {
+        defaultBranch = "main";
+      };
       user = {
         name = "MassiveMigraine";
         email = "MassiveMigraine@gmail.com";
