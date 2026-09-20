@@ -3,6 +3,7 @@ sudo nixos-rebuild dry-build --flake .#x1nano
 sudo nixos-rebuild switch --flake .#x1nano
 
 nix-shell -p git vim
+nix-shell -p usbutils --run lsusb
 
 # Generate hardware-configuration.nix
 su -  

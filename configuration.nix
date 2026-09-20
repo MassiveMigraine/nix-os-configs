@@ -39,6 +39,12 @@
     };  
   };
 
+  # Needed for nix-shell -p
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -58,10 +64,8 @@
   # Enable sound
   services.pipewire = { 
     enable = true;
-
     alsa.enable = true;
     alsa.support32Bit = true;
-
     pulse.enable = true;
   };  
 
