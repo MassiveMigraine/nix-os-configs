@@ -4,8 +4,8 @@ let
 in
 {
   # folders
-  #home.file = {
-  #  ".config/autorandr".source = config.lib.file.mkOutOfStoreSymlink "${machine_files}/autorandr";
-  #};
+  home.file = {
+    ".config/autorandr".source = config.lib.file.mkOutOfStoreSymlink "${machine_files}/autorandr";
+  };
 
 }
