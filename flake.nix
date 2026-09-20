@@ -29,12 +29,12 @@
         ];
       };
 
-      nixosConfigurations.genric-vm= nixpkgs.lib.nixosSystem {
+      nixosConfigurations.generic-vm= nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         modules = [
           ./configuration.nix
-          ./machines/genric-vm/configuration.nix
+          ./machines/generic-vm/configuration.nix
 
           home-manager.nixosModules.home-manager
 
