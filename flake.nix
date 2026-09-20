@@ -11,7 +11,8 @@
     };
   
   outputs = { nixpkgs, home-manager, ... }:
-    {
+  {
+
       nixosConfigurations.x1nano = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
@@ -27,5 +28,22 @@
             }
         ];
       };
+
+      nixosConfigurations.x1nano = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        modules = [
+          ./configuration.nix
+          ./machines/genric-vm/configuration.nix
+
+          home-manager.nixosModules.home-manager
+
+          {
+            home-manager.users.ghost = 
+              import ./machines/generic-vm/home.nix;
+            }
+        ];
+      };
+
     };
 }
