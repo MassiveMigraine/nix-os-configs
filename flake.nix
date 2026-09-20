@@ -29,7 +29,7 @@
         ];
       };
 
-      nixosConfigurations.x1nano = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.genric-vm= nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         modules = [

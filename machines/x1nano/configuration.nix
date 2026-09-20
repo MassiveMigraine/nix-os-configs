@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   imports = [
     ./hardware-configuration.nix
@@ -30,6 +29,10 @@
     home.homeDirectory = "/home/ghost"; 
     home.stateVersion = "26.05";
   };
+
+  # Disable Mouse Accel
+  environment.etc."X11/xorg.conf.d/90-disable-mouse-accel.conf".source =
+    ./90-disable-mouse-accel.conf;
 
   # Enable firmware updates
   hardware.enableRedistributableFirmware = true;
