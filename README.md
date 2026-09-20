@@ -4,4 +4,4 @@ sudo nixos-rebuild switch --flake .#x1nano
 
 # Generate hardware-configuration.nix
 su -  
-nixos-generate-config --show-hardware-config > /etc/nixos/machines/<machine>/hardware-configuration.nix
+nixos-generate-config --show-hardware-config > /home/ghost/.nix-configs/machines/<machine>/hardware-configuration.nix
