@@ -1,3 +1,5 @@
+output eDP-1
+off
 output HDMI-1
 off
 output DP-1
@@ -17,7 +19,7 @@ off
 output DP-3-3
 crtc 2
 mode 1920x1080
-pos 5600x0
+pos 3440x0
 rate 60.00
 rotate left
 x-prop-audio auto
@@ -27,20 +29,10 @@ x-prop-non_desktop 0
 output DP-3-2
 crtc 0
 mode 3440x1440
-pos 2160x179
+pos 0x190
 primary
 rate 59.97
 x-prop-audio auto
 x-prop-broadcast_rgb Automatic
 x-prop-max_bpc 12
 x-prop-non_desktop 0
-output eDP-1
-crtc 1
-mode 2160x1350
-pos 0x224
-rate 59.74
-x-prop-broadcast_rgb Automatic
-x-prop-colorspace Default
-x-prop-max_bpc 12
-x-prop-non_desktop 0
-x-prop-scaling_mode Full aspect

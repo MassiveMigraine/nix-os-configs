@@ -24,6 +24,7 @@
     rofi
     pcmanfm
     pavucontrol
+    bluez
     pasystray
     vim-full
     tree
@@ -34,5 +35,6 @@
     nextcloud-client
     remmina
     vscode
+    feh
   ];
 }

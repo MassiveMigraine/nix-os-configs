@@ -39,6 +39,8 @@
     };  
   };
 
+  #boot.blacklistedKernelModules = [ "pcspkr" ];
+
   # Needed for nix-shell -p
   nix.settings.experimental-features = [
     "nix-command"
