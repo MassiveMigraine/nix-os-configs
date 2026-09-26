@@ -7,6 +7,7 @@ in
   home.file = {
     # files
     ".bashrc".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.bashrc";
+    ".bash_aliases".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.bash_aliases";
     ".vimrc".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.vimrc";
     ".gvimrc".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.gvimrc";
     ".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.tmux.conf";

@@ -25,7 +25,8 @@
     pcmanfm
     pavucontrol
     bluez
-    pasystray
+    #pasystray
+    pa_applet
     vim-full
     tree
     rxvt-unicode
