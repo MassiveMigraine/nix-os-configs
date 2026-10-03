@@ -1,50 +1,23 @@
 { pkgs, ...}:
 {
-  programs.firefox= {
-    enable = true;
-    policies = {
-      DNSOverHTTPS = {
-        Enabled = false;
-        Locked = true;
-      };
-    };
-  };
-
   programs.tmux.enable = true;
-
-  programs.git = {
-    enable = true;
-    config = {
-      init = {
-        defaultBranch = "main";
-      };
-      user = {
-        name = "MassiveMigraine";
-        email = "MassiveMigraine@gmail.com";
-      };
-    };
-  };
 
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     openbox
     pkgs.obconf
+    pavucontrol
     tint2
     rofi
     pcmanfm
-    pavucontrol
-    pasystray
-    bluez
+    feh
+    rxvt-unicode
     vim-full
     tree
-    rxvt-unicode
-    keepassxc
+    btop
     arandr
-    autorandr
-    nextcloud-client
-    remmina
-    vscode
-    feh
-    spotify
+    seahorse # used to not need to login for gnome keyring (because yolo)
+    dunst
+    libnotify
   ];
 }

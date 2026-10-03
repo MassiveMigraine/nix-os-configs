@@ -3,6 +3,7 @@
   imports =
     [ 
       ./packages.nix
+      ./programs.nix
     ];
 
   networking.networkmanager.enable = true;
@@ -39,8 +40,6 @@
     };  
   };
 
-  #boot.blacklistedKernelModules = [ "pcspkr" ];
-
   # Needed for nix-shell -p
   nix.settings.experimental-features = [
     "nix-command"
@@ -52,6 +51,15 @@
     layout = "us";
     variant = "";
   };
+
+  # Garbage collection, 30d packages
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+  # Set number of rollback configurations
+  boot.loader.systemd-boot.configurationLimit = 10;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -76,11 +84,13 @@
   # Enable gvfs for PCManFM (network SSH shares)
   services.gvfs = { 
     enable = true;
-  };  
+  };    
+
+  # Enable dconf database (for blueman-applet ect.)
+  programs.dconf.enable = true;
 
   # Enable gnome-keyring for Nextcloud saved creds
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.login.enableGnomeKeyring = true;
 
   system.stateVersion = "26.05";
 
