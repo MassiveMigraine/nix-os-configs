@@ -39,6 +39,12 @@
   #  enable32Bit = true;
   #};
 
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    vSync = true;
+  };
+
   # Enable firmware updates
   hardware.enableRedistributableFirmware = true;
 
@@ -48,6 +54,15 @@
   
   # Enable bluetooth
   hardware.bluetooth.enable = true;
+
+  services.blueman.enable = true;
+
+  # Workaround to make Bose QC work https://github.com/bluez/bluez/issues/2280
+  environment.etc."wireplumber/wireplumber.conf.d/99-bluez-a2dp-source.conf".text = ''
+    monitor.bluez.properties = {
+      bluez5.roles = [ a2dp_source hsp_ag hfp_ag ]
+    }
+  '';
 
   # Thermals and power management
   services.thermald.enable = true;

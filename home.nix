@@ -17,6 +17,7 @@ in
     # folders
     ".vim".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.vim";
     ".config/openbox".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.config/openbox";
+    ".config/blueman".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.config/blueman";
     ".themes".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.themes";
     ".local/share/remmina".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/.local/share/remmina";
   };

@@ -1,6 +1,15 @@
 { pkgs, ...}:
 {
-  programs.firefox.enable = true;
+  programs.firefox= {
+    enable = true;
+    policies = {
+      DNSOverHTTPS = {
+        Enabled = false;
+        Locked = true;
+      };
+    };
+  };
+
   programs.tmux.enable = true;
 
   programs.git = {
@@ -24,9 +33,8 @@
     rofi
     pcmanfm
     pavucontrol
+    pasystray
     bluez
-    #pasystray
-    pa_applet
     vim-full
     tree
     rxvt-unicode
@@ -37,5 +45,6 @@
     remmina
     vscode
     feh
+    spotify
   ];
 }
