@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     openbox
+    xdgmenumaker
     pkgs.obconf
     pavucontrol
     tint2

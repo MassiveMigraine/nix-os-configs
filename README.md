@@ -35,7 +35,7 @@ sudo nix-store --gc
 
 ## New Machine Setup
 #### New Machine / Install
-1) Update flake.nix with a new `NixosConfigurations.<machine> = makeHost {}`
+1) Update flake.nix with a new `nixosConfigurations.<machine> = makeHost {}`
 2) Make a new `.nix-config/machines/<machine>`
 3) Use another machine as a template and/or setup new
 4) Make a new `.dotfiles/<machine>`
