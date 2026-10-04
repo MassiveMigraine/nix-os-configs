@@ -92,6 +92,4 @@
   # Enable gnome-keyring for Nextcloud saved creds
   services.gnome.gnome-keyring.enable = true;
 
-  system.stateVersion = "26.05";
-
 }

@@ -35,19 +35,31 @@ sudo nix-store --gc
 
 
 ## New Machine Setup
-#### Generate hardware-configuration.nix
+#### New Machine / Install
+1) Update flake.nix with a new `NixosConfigurations.<machine> = makeHost {}`
+2) Make a new `.nix-config/machines/<machine>`
+3) Use another machine as a template and/or setup new
+4) Make a new `.dotfiles/<machine>`
+
+On the new machine:
+```bash
+    nix-shell -p git
+
+    git clone https://github.com/MassiveMigraine/nix-os-configs.git ~/.nix-config
+
+    git clone https://github.com/MassiveMigraine/dotfiles.git ~/.dotfiles
+
+    cp /etc/nixos/hardware-configuration.nix ~/.nix-configs/machines/<machine>/hardware-configuration.nix
+
+    sudo nixos-rebuild switch --extra-experimental-features 'nix-command flakes' --flake ~/.nix-config/.#<machine>'
+
+    sudo reboot
+```
+
+
+#### Generate hardware-configuration.nix if deleted
 ```bash
 su -  
 
-nixos-generate-config --show-hardware-config > /home/<user>/.nix-configs/machines/<machine>/hardware-configuration.nix
+nixos-generate-config --show-hardware-config > ~/.nix-configs/machines/<machine>/hardware-configuration.nix
 ```
-
-#### New Machine / Install
-Update flake.nix
-
-nix-shell -p git vim
-git clone <gitrepo>/nix-os-configs /home/<user>/.nix-configs
-git clone <gitrepo>/dotfiles /home/<user>/.dotfiles
-
-su -
-nixos-generate-config --show-hardware-config > /home/<user>/.nix-configs/machines/<machine>/hardware-configuration.nix
