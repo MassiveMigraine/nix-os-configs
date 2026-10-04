@@ -10,7 +10,6 @@ sudo nixos-rebuild switch --flake .#x1nano
 
 # or alias if created
 x1switch
-mediaswitch
 ```
 
 #### Run program without installing
@@ -51,7 +50,11 @@ On the new machine:
 
     cp /etc/nixos/hardware-configuration.nix ~/.nix-configs/machines/<machine>/hardware-configuration.nix
 
-    sudo nixos-rebuild switch --extra-experimental-features 'nix-command flakes' --flake ~/.nix-config/.#<machine>'
+    cd into ~/.nix-configs
+
+    git add .
+
+    sudo nixos-rebuild switch --flake .#<machine>'
 
     sudo reboot
 ```

@@ -5,7 +5,6 @@
     pasystray
     bluez
     remmina
-    vscode
     nextcloud-client
     keepassxc
     spotify
