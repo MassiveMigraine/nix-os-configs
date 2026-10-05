@@ -10,5 +10,7 @@
     nextcloud-client
     keepassxc
     spotify
+    pkgs.android-tools
+    android-file-transfer   # mount:`aft-mtp-mount ~/mnt-phone` umount:`fusermount -u ~/mnt-phone`
   ];
 }

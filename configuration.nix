@@ -40,6 +40,10 @@
     };  
   };
 
+  environment.variables = {
+    GTK_THEME = "Adwaita:dark";
+  };
+
   # Needed for nix-shell -p
   nix.settings.experimental-features = [
     "nix-command"
