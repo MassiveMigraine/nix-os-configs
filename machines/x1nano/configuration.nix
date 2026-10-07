@@ -28,6 +28,9 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
+  # Enable smartcard for Yubico Authenticator / OTP / PIV
+  services.pcscd.enable = true;
+
   # Workaround to make Bose QC work https://github.com/bluez/bluez/issues/2280
   environment.etc."wireplumber/wireplumber.conf.d/99-bluez-a2dp-source.conf".text = ''
     monitor.bluez.properties = {
